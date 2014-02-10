@@ -1,3 +1,9 @@
 [submodule "application/i18n"]
 	path = application/i18n
 	url = git://github.com/ushahidi/Ushahidi-Localizations.git
+[submodule "themes/ci-theme"]
+	path = themes/ci-theme
+	url = git@github.com:Winguweb/ci-theme.git
+[submodule "plugins/facebook-plugin"]
+	path = plugins/facebook-plugin
+	url = git@github.com:Winguweb/ushahidi-facebook-plugin.git
