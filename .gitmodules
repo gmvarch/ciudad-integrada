@@ -7,3 +7,6 @@
 [submodule "plugins/facebook-plugin"]
 	path = plugins/facebook-plugin
 	url = git@github.com:Winguweb/ushahidi-facebook-plugin.git
+[submodule "plugins/status-plugin"]
+	path = plugins/status-plugin
+	url = git@github.com:Winguweb/ci-status-plugin.git
