@@ -99,8 +99,6 @@ class S_Feeds_Controller extends Controller {
 						if(!empty($categories)) {
 							foreach($categories as $category) {
 								$categoryData = ORM::factory('category')->where('category_title', $category->term)->find();
-								//if($categoryData) {
-								//	$category_ids->feed_category[$categoryData->id] = $categoryData->id;
 								if($categoryData->loaded == TRUE) {
  									$category_ids->feed_item_category[$categoryData->id] = $categoryData->id;
 								} else {
@@ -111,9 +109,9 @@ class S_Feeds_Controller extends Controller {
 									$newcategory->category_color = '000000';
 									$newcategory->category_visible = 0;
 									$newcategory->save();
-									//$category_ids->feed_category[$newcategory->id] = $newcategory->id;
 									$category_ids->feed_item_category[$newcategory->id] = $newcategory->id;
 								}
+
 							}
 						}
 						// HT: End of new code
@@ -121,7 +119,6 @@ class S_Feeds_Controller extends Controller {
 						$newitem->save();
 
 						// HT: New code
-						//if(!empty($category_ids->feed_category)) {
 						if(!empty($category_ids->feed_item_category)) {
 							feed::save_category($category_ids, $newitem);
 						}
