@@ -7,3 +7,9 @@
 [submodule "plugins/status-plugin"]
 	path = plugins/status-plugin
 	url = git@github.com:Winguweb/ci-status-plugin.git
+[submodule "plugins/facebooklogin"]
+	path = plugins/facebooklogin
+	url = git@github.com:Winguweb/facebooklogin.git
+[submodule "plugins/request-information"]
+	path = plugins/request-information
+	url = git@github.com:Winguweb/ci-request-information.git
