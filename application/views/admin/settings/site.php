@@ -165,6 +165,16 @@
 							</span>
 						</div>
 						<div class="row">
+							<h4><a href="#" class="tooltip" title="<?php echo Kohana::lang("tooltips.settings_allow_feed_category"); ?>"><?php echo Kohana::lang('settings.site.allow_feed_category');?></a></h4>
+							<span class="sel-holder">
+								<?php print form::dropdown('allow_feed_category', $yesno_array, $form['allow_feed_category']); ?>
+							</span>
+						</div>
+						<div class="row">
+							<h4><a href="#" class="tooltip" title="<?php echo Kohana::lang("tooltips.feed_geolocation_user"); ?>"><?php echo Kohana::lang('settings.site.feed_geolocation_user');?></a></h4>
+							<?php print form::input('feed_geolocation_user', $form['feed_geolocation_user'], ' class="text long2"', 'id = alert_email'); ?>
+						</div>
+						<div class="row">
 							<h4><a href="#" class="tooltip" title="<?php echo Kohana::lang("tooltips.settings_share_site_stats"); ?>"><?php echo Kohana::lang('settings.site.share_site_stats');?></a></h4>
 							<span class="sel-holder">
 								<?php print form::dropdown('allow_stat_sharing', $yesno_array, $form['allow_stat_sharing']); ?>

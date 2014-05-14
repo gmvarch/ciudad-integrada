@@ -1,5 +1,5 @@
 -- Ushahidi Engine
--- version 110
+-- version 115
 -- http://www.ushahidi.com
 
 
@@ -557,7 +557,9 @@ INSERT INTO `country` (`id`, `iso`, `country`, `capital`, `cities`) VALUES
 (244, 'YT', 'Mayotte', 'Mamoudzou', 0),
 (245, 'ZA', 'South Africa', 'Pretoria', 0),
 (246, 'ZM', 'Zambia', 'Lusaka', 0),
-(247, 'ZW', 'Zimbabwe', 'Harare', 0);
+(247, 'ZW', 'Zimbabwe', 'Harare', 0),
+(248, 'XK', 'Kosovo', 'Pristina', 0),
+(249, 'SS', 'South Sudan', 'Juba', 0);
 
 -- --------------------------------------------------------
 
@@ -619,6 +621,23 @@ CREATE TABLE IF NOT EXISTS `feed_item` (
   KEY `incident_id` (`incident_id`),
   KEY `location_id` (`location_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Stores feed items pulled from each RSS Feed' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+/**
+ * Table structure for table `feed_item_category`
+ *
+ */
+
+CREATE TABLE IF NOT EXISTS `feed_item_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `feed_item_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `category_id` int(11) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `feed_item_category_ids` (`feed_item_id`,`category_id`),
+  KEY `feed_item_id` (`feed_item_id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Stores fetched feed items categories' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1037,7 +1056,7 @@ CREATE TABLE IF NOT EXISTS `permissions` (
 ) ENGINE=MyISAM AUTO_INCREMENT=16 COMMENT='Stores permissions used for access control';
 
 /* Data for permissions table */
-INSERT IGNORE INTO `permissions` VALUES 
+INSERT IGNORE INTO `permissions` VALUES
 (1,'reports_view'),
 (2,'reports_edit'),
 (4,'reports_comments'),
@@ -1380,7 +1399,9 @@ VALUES
   (61,'allow_alerts','1'),
   (62,'require_email_confirmation','0'),
   (63,'manually_approve_users','0'),
-  (64,'enable_timeline','0');
+  (64,'enable_timeline','0'),
+  (65,'feed_geolocation_user', ''),
+  (66,'allow_feed_category', '0');
 -- --------------------------------------------------------
 
 /**
@@ -1457,5 +1478,5 @@ CREATE TABLE IF NOT EXISTS `verified` (
  * Version information for table `settings`
  *
  */
-UPDATE `settings` SET `value` = '113' WHERE `key` = 'db_version';
-UPDATE `settings` SET `value` = '2.7.2' WHERE `key`= 'ushahidi_version';
+UPDATE `settings` SET `value` = '117' WHERE `key` = 'db_version';
+UPDATE `settings` SET `value` = '2.7.3' WHERE `key`= 'ushahidi_version';
