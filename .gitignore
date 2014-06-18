@@ -10,3 +10,8 @@ application/config/config.php
 application/config/database.php
 application/config/encryption.php
 tests/phpunit/phpunit.xml
+
+plugins/Ushahidi-SocialMedia-master/*
+plugins/Ushahidi-plugin-mapbox-master/*
+plugins/fileupload-master/*
+
