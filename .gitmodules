@@ -13,3 +13,7 @@
 [submodule "plugins/request-information"]
 	path = plugins/request-information
 	url = git@github.com:Winguweb/ci-request-information.git
+[submodule "plugins/ci-ask"]
+	path = plugins/ci-ask
+	url = git@github.com:Winguweb/ci-ask.git
+
