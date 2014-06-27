@@ -187,14 +187,14 @@
 	      event.feature.attributes.link != '')
 	    {
 	      content += "<a href='"+event.feature.attributes.link+"'>" +
-	          "<?php echo Kohana::lang('ui_main.more_information');?></a><br/>";
+	          "<?php //echo Kohana::lang('ui_main.more_information');?>Mas información</a><br/>";
 	    }
     
 	    content += "<a href='javascript:zoomToSelectedFeature("+ lon + ","+ lat +",1)'>";
-	    content += "<?php echo Kohana::lang('ui_main.zoom_in');?></a>";
+	    content += "<?php //echo Kohana::lang('ui_main.zoom_in');?>Acercar</a>";
 	    content += "&nbsp;&nbsp;|&nbsp;&nbsp;";
 	    content += "<a href='javascript:zoomToSelectedFeature("+ lon + ","+ lat +",-1)'>";
-	    content += "<?php echo Kohana::lang('ui_main.zoom_out');?></a></div>";
+	    content += "<?php //echo Kohana::lang('ui_main.zoom_out');?>Alejar</a></div>";
 	    content += "</div><div style=\"clear:both;\"></div></div>";		
 
 	    if (content.search("<?php echo '<'; ?>script") != -1) {
