@@ -53,7 +53,7 @@
 				new OpenLayers.Control.MousePosition({
 					formatOutput: Ushahidi.convertLongLat
 				}),
-				new OpenLayers.Control.LayerSwitcher()
+				//new OpenLayers.Control.LayerSwitcher()
 			]);
 		} else if (controls.length > 0) {
 			map.addControls(controls);
