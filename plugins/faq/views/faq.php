@@ -12,86 +12,73 @@
 
     </div><!-- /.container-fluid -->
 
-    <div class="container main-content generic">
+<div class="container main-content generic">
 
-          <div class="row content-info">
-            
-            <div class="col-xs-12 col-md-3">
-                <div class="list-group bold-italic upper">
-                  <a href="#" class="list-group-item active">Cómo usar la plataforma?</a>
-                  <a href="#" class="list-group-item">Cómo me registro?</a>
-                  <a href="#" class="list-group-item">Para que es esto?</a>
-                  <a href="#" class="list-group-item">Por qué es importante?</a>
-                  <a href="#" class="list-group-item">Cómo agrego mi barrio?</a>
-                  <a href="#" class="list-group-item">Qué es la integración urbana? </a>
-                  <a href="#" class="list-group-item">Quiénes hacen esta plataforma?</a>
-                  <a href="#" class="list-group-item">Qué cosas puedo denunciar?</a>
-                  <a href="#" class="list-group-item">Cómo me entero que sucede en mi barrio?</a>
-                </div>
-                
-                </div>
+	<div class="row content-info">
 
+		<div class="col-xs-12 col-md-3">
+			<div class="list-group bold-italic upper">
+			  <a href="#faq-1" class="list-group-item">¿Quién puede realizar un reclamo?</a>
+			  <a href="#faq-2" class="list-group-item">¿Cómo realizo un reclamo?</a>
+			  <a href="#faq-3" class="list-group-item">¿Quién puede ver los reclamos que se realizan?</a>
+			  <a href="#faq-4" class="list-group-item">¿Qué sucede cuando realizo un reclamo?</a>
+			  <a href="#faq-5" class="list-group-item">¿Quién puede realizar un pedido de información?</a>
+			  <a href="#faq-6" class="list-group-item">¿Cómo hago un pedido de información?</a>
+			  <a href="<?php echo url::site()."how"; ?>" class="list-group-item">¿Cómo Funciona?</a>
+			  <a href="<?php echo url::site()."contact"; ?>" class="list-group-item">Reportar error</a>
+			</div>
+		</div>
 
-            <div class="col-xs-12 col-md-8">
+		<div class="col-xs-12 col-md-8">
+			<div class="blog-post" id="faq-1">
+				<h1 class="bold-italic blue">¿Quién puede realizar un reclamo?</h1>
+				<h3>Cualquiera puede hacer un reclamo. </h3>      
+				<p>Podés hacerlo de tres formas:</p>
+				<ul>
+					<li><strong>Registrarte en la plataforma:</strong> con tu nombre y un contacto. <br/><i>Los reclamos que hagas aparecerán con el nombre con el que te hayas registrado en Caminos de la Villa.</i></li>
+					<li><strong>Registrarte a través de Facebook:</strong> asociamos tu cuenta de Facebook con Caminos de la Villa.<br><i>Los reclamos que hagas aparecerán con tu nombre de Facebook.</i></li>
+					<li><strong>Hacer un reclamo “anónimo”:</strong> sólo nos dejás una dirección de correo electrónico.<br><i>Los reclamos que hagas aparecerán sin nombre. Sólo registramos tu correo para poder darte información sobre tus reclamos.</i></li>
+				</ul>  
+			</div>
+			
+			<div class="blog-post" id="faq-2">
+				<h1 class="bold-italic blue">¿Cómo realizo un reclamo?</h1>     
+				<p>Sólo tenés que hacer clic en la opción “hacer reclamo” y  seguir las indicaciones de la página.</p>
+			</div>
 
-                <div class="blog-post">
-                    <h1 class="bold-italic blue">Cómo usar la plataforma?</h1>
+			<div class="blog-post" id="faq-3">
+				<h1 class="bold-italic blue">¿Quién puede ver los reclamos que se realizan?</h1>				    
+				<p>El mapa es público, así que cualquiera puede ver los reclamos. Lo que sí podés hacer es ocultar tu nombre: en este caso el reclamo aparecerá como “anónimo”. Nosotros sólo registramos tu correo para poder darte información sobre tus reclamos.</p>
+			</div>
 
-                    <h4 class="light blue">This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</h4>
-                    <hr>
-                   
-                    <p class="lead">Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    <blockquote>
-                      <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    </blockquote>
-                    
-                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-                    
-                    <h2>Heading</h2>
-                    <img src="http://placehold.it/350x350" alt="#" class="col-xs-12 col-sm-6 align-img-left img-rounded img-responsive">
-                    
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                    
-                    <h3>Sub-heading</h3>
-                    
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    
-                    <pre><code>Aenean lacinia bibendum nulla sed consectetur!</code></pre>
-                    
-                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-                    
-                    <h3>Sub-heading</h3>
-                    
-                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <ul>
-                      <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-                      <li>Donec id elit non mi porta gravida at eget metus.</li>
-                      <li>Nulla vitae elit libero, a pharetra augue.</li>
-                    </ul>
-                   
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-                   
-                    <ol>
-                      <li>Vestibulum id ligula porta felis euismod semper.</li>
-                      <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                      <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-                    </ol>
-                   
-                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+			<div class="blog-post" id="faq-4">
+				<h1 class="bold-italic blue">¿Qué sucede cuando realizo un reclamo?</h1> 
+				<p>El reclamo queda registrado en nuestra plataforma. Después, ACIJ (y otras organizaciones que tengan interés) usará esta información para:</p>
+				<ul>
+					<li>Iniciar acciones legales en los temas más relevantes de cada barrio</li>
+					<li>Realizar informes periódicos al gobierno sobre los problemas detectados</li>
+					<li>Hacer pedidos de información sobre los problemas registrados</li>
+					<li>Visibilizar la situación de los barrios con datos concretos</li>
+					<li>Hacer campañas de incidencia en medios de comunicación (diarios, radios, televisión) o redes sociales (facebook y twitter).</li>
+					<li>Hacer campañas de incidencia en medios de comunicación (diarios, radios, televisión) o redes sociales (facebook y twitter).</li>
+				</ul>
+				<p>“Caminos de la villa” es una herramienta de incidencia más que podemos usar para hacer valer nuestros derechos, pero que debe combinarse con otras. </p>
+			</div>
+			
+			<div class="blog-post" id="faq-5">
+				<h1 class="bold-italic blue">¿Quién puede realizar un pedido de información?</h1>   
+				<p>Cualquiera puede hacer un pedido de información. Sólo tenés que dejarnos una dirección de correo electrónico o un teléfono para que podamos hacerte llegar las respuestas que obtengamos. /p>
+			</div>
+			
+			<div class="blog-post" id="faq-6">
+				<h1 class="bold-italic blue">¿Cómo hago un pedido de información?</h1>    
+				<p>Sólo tenés que hacer clic en la opción “pedí info” y hacer la pregunta que quieras. Nosotros nos encargamos de gestionar tu pedido al organismo que corresponda, y enviarte los datos que nos respondan.</p>
+			</div>
+			
+		</div>
 
-
-                  </div>
-
-            </div>
-
-         
-
-          
-
-
-        </div>  
-    </div> <!--/.main-content -->
+	</div>  
+	
+</div> <!--/.main-content -->
 
      
