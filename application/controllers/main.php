@@ -153,7 +153,7 @@ class Main_Controller extends Template_Controller {
     public function index()
     {
         $this->template->header->this_page = 'home';
-        $this->template->content = new View('main/layout');
+        $this->template->content = new View('main/layout');        
 
 		// Cacheable Main Controller
 		$this->is_cachable = TRUE;
