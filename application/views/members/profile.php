@@ -44,9 +44,11 @@
 					<?php
 					}
 					?>
+					<!--
 					<div class="head">
 						<input type="submit" class="save-rep-btn" value="<?php echo Kohana::lang('ui_admin.save_settings');?>" />
 					</div>
+					-->
 					<!-- column -->
 					<div class="">
 
