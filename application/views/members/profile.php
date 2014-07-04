@@ -14,8 +14,8 @@
  */
 ?>
 			<div class="bg">
-				<h2><?php echo Kohana::lang('ui_admin.my_profile');?></h2>
-				<?php print form::open(); ?>
+				<h2><?php echo Kohana::lang('ui_admin.my_profile');?></h2>				
+				<?php print form::open(NULL, array('class' => 'form-horizontal','role' => 'form')); ?>
 				<div class="report-form">
 					<?php
 					if ($form_error) {
@@ -48,7 +48,7 @@
 						<input type="submit" class="save-rep-btn" value="<?php echo Kohana::lang('ui_admin.save_settings');?>" />
 					</div>
 					<!-- column -->
-					<div class="sms_holder">
+					<div class="">
 
 						<?php Event::run('ui_admin.profile_shown'); ?>					
 
