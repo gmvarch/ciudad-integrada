@@ -32,6 +32,9 @@ h2{
 	border:1px solid #fff;
 	background:#f2f7fa;
 }
+.dashboard h2 {
+	background: none;
+}
 h2 span{
 	padding:0 15px 0 0;
 	font-size:14px;
@@ -258,7 +261,7 @@ ul.sub-nav  li a:hover{ text-decoration:underline;}
 	float:left;
 }
 .dashboard .column {
-	width: 500px;
+	padding: 0;
 }
 /*-- box --*/
 .box {	
