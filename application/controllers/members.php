@@ -19,7 +19,7 @@ class Members_Controller extends Template_Controller
 
 	// Main template
 	public $template = 'members/layout';
-
+	
 	// Cache instance
 	protected $cache;
 
@@ -30,6 +30,7 @@ class Members_Controller extends Template_Controller
 	protected $table_prefix;
     
     protected $release;
+
 
 	public function __construct()
 	{
@@ -43,7 +44,7 @@ class Members_Controller extends Template_Controller
 
 		// Load database
 		$this->db = new Database();
-
+		
 		$this->session = Session::instance();
 
 		if ( ! $this->auth->logged_in('login'))
@@ -62,6 +63,7 @@ class Members_Controller extends Template_Controller
 		$this->themes = new Themes();
 		$this->themes->admin = TRUE;
 
+		
 		// Set Table Prefix
 		$this->table_prefix = Kohana::config('database.default.table_prefix');
 

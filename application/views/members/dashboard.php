@@ -215,6 +215,7 @@
 					</div>
 
 					<!-- badge box -->
+					<?php /*
 					<div class="box">
 
 						<h3><?php echo Kohana::lang('ui_main.badges');?></h3>
@@ -240,7 +241,8 @@
 						<div style="clear:both;"></div>
 
 					</div>
-
+					*/
+					?>
 					<!-- box -->
 					<div class="box">
 						<h3><?php echo Kohana::lang('ui_main.quick_stats');?></h3>
@@ -256,7 +258,7 @@
 							<li>
 								<a href="<?php echo url::site() . 'members/alerts' ?>" class="alerts"><?php echo Kohana::lang('ui_admin.my_alerts');?></a>
 								<strong><?php echo $alerts; ?></strong>
-							</li>
+							</li><!--
 							<li>
 								<a href="#" class="votes"><?php echo Kohana::lang('ui_admin.my_votes');?></a>
 								<strong><?php echo $votes; ?></strong>
@@ -268,7 +270,7 @@
 							<li>
 								<a href="<?php echo url::site() . 'members/private' ?>" class="messages"><?php echo Kohana::lang('ui_admin.private_messages');?></a>
 								<strong><?php echo "0"; ?></strong>
-							</li>
+							</li>-->
 						</ul>
 					</div>
 				</div>

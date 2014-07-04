@@ -19,7 +19,7 @@ class members_Core {
 			'dashboard' => Kohana::lang('ui_admin.dashboard'),
 			'reports' => Kohana::lang('ui_admin.my_reports'),
 			'alerts' => Kohana::lang('ui_admin.my_alerts'),
-			'private' => Kohana::lang('ui_admin.private_messages')
+			/*'private' => Kohana::lang('ui_admin.private_messages')*/
 		);
 		
 		Event::run('ushahidi_action.nav_members_main_top', $tabs);
@@ -40,9 +40,9 @@ class members_Core {
 			? Kohana::lang('ui_main.view_reports')
 			: "<a href=\"".url::site()."members/reports\">".Kohana::lang('ui_main.view_reports')."</a>";
 
-        $menu .= ($this_sub_page == "edit")
+       /* $menu .= ($this_sub_page == "edit")
 			? Kohana::lang('ui_main.create_report')
-			: "<a href=\"".url::site()."members/reports/edit\">".Kohana::lang('ui_main.create_report')."</a>";
+			: "<a href=\"".url::site()."members/reports/edit\">".Kohana::lang('ui_main.create_report')."</a>";*/
 
         echo $menu;
         
