@@ -59,10 +59,9 @@
 					<li>Realizar informes periódicos al gobierno sobre los problemas detectados</li>
 					<li>Hacer pedidos de información sobre los problemas registrados</li>
 					<li>Visibilizar la situación de los barrios con datos concretos</li>
-					<li>Hacer campañas de incidencia en medios de comunicación (diarios, radios, televisión) o redes sociales (facebook y twitter).</li>
-					<li>Hacer campañas de incidencia en medios de comunicación (diarios, radios, televisión) o redes sociales (facebook y twitter).</li>
+					<li>Hacer campañas de incidencia en medios de comunicación (diarios, radios, televisión) o redes sociales (facebook y twitter).</li>				
 				</ul>
-				<p>“Caminos de la villa” es una herramienta de incidencia más que podemos usar para hacer valer nuestros derechos, pero que debe combinarse con otras. </p>
+				<p><strong>"Caminos de la villa"</strong> es una herramienta de incidencia más que podemos usar para hacer valer nuestros derechos, pero que debe combinarse con otras. </p>
 			</div>
 			
 			<div class="blog-post" id="faq-5">

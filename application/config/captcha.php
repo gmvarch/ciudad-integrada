@@ -25,4 +25,4 @@
 	'fonts'      => array('DejaVuSerif.ttf'),
 	'promote'    => FALSE,
 );*/
-$config['default']['style'] = 'math';
+$config['default']['style'] = 'alpha';
