@@ -333,7 +333,7 @@ class obras_Core {
 					'(c.id IN (2) OR c.parent_id IN (2))',
 					'c.category_visible = 0'
 				);
-		 * 
+		 * */
 		// Check for order and sort params
 		$order_field = NULL; $sort = NULL;
 		$order_options = array(
