@@ -12,7 +12,7 @@
 
     </div><!-- /.container-fluid -->
 
-<div class="container main-content generic">
+<div class="container main-content generic faq">
 
 	<div class="row content-info">
 
