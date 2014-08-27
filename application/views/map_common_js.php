@@ -13,7 +13,7 @@
 	 * @param targetElement ID of the element to be used for creating the map
 	 * @param options Options to be used for creating the map
 	 */
-	function createMap(targetElement, lat, lon, zoomLevel, options, controls)
+	function createMap(targetElement, lat, lon, zoomLevel=18, options, controls)
 	{
 		if (typeof targetElement == 'undefined' 
 		    || $("#"+targetElement) == null) {
