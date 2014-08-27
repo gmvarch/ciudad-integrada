@@ -30,7 +30,7 @@
 
 					<p>Calles, pasillos, comedores, escuelas, centros comunitarios, etc.</p>
 
-					<a href="<?php echo url::site()."contact";?>" class="btn btn-lg bold-italic btn-warning upper">+ Añadir un lugar</a>
+					<a href="<?php echo url::site()."reports/submit";?>" class="btn btn-lg bold-italic btn-warning upper">+ Añadir un lugar</a>
 				</div>
 
 			</div>  
