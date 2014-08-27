@@ -187,7 +187,7 @@
 	      event.feature.attributes.link != '')
 	    {
 	      content += "<a href='"+event.feature.attributes.link+"'>" +
-	          "<?php //echo Kohana::lang('ui_main.more_information');?>Mas información</a><br/>";
+	          "<?php //echo Kohana::lang('ui_main.more_information');?>Más información</a><br/>";
 	    }
     
 	    content += "<a href='javascript:zoomToSelectedFeature("+ lon + ","+ lat +",1)'>";

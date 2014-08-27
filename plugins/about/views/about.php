@@ -45,10 +45,10 @@
 				  <h3 class="bold-italic blue" style="margin-top:0;">
 					Sobre presupuestos, servicios públicos y obras que deberían hacerse en nuestro barrio.</h3>
 
-					<p>Qué obra, que presupuesto, que debería hacerse? </p>
+					<p>¿Qué obra debe hacerse? ¿Qué presupuesto tiene? ¿Quién es el encargado de hacerlo?</p>
 
 					<a href="<?php echo url::site()."ci_ask/submit";?>" class="btn btn-lg bold-italic btn-danger upper">Pedí info</a>
-					  <p><small>Escribinos tu pregunta a través de Pedir info, desde ACIJ nos encargamos de hacer el pedido formal a los organismos y enviarte las respuestas.</small></p>
+					  <p><small>Escribinos tu pregunta a través de “Pedí Información”. Desde ACIJ nos encargamos de hacer el pedido formal a los organismos que correspondan y enviarte las respuestas.</small></p>
 				</div>
 
 			</div>  
@@ -61,8 +61,7 @@
 				<div class="col-md-6 col-xs-10 text-left">
 				  <h1 class="upper bold-italic">Monitoreamos</h1>
 				  <h3 class="bold-italic blue" style="margin-top:0;">
-					si la obra se hizo, o si el servicio se presta.</h3>
-				  <p>Si la obra no se hizo o se hizo mal, o si creemos que el barrio necesia una nueva obra, o si un servicio público funciona mal.</p>
+					si la obra se hizo, o si el servicio se presta.</h3>				  
 				</div>
 
 			</div> 
@@ -73,7 +72,7 @@
 				  <span class="number-big bold-italic blue">04</span>
 				</div>
 				<div class="col-md-4 col-xs-10 text-left" style="padding-top: 20px;">
-				  <p><small>Si la obra no se hizo o se hizo mal, o si creemos que el barrio necesia una nueva obra, o si un servicio público funciona mal.</small></p>
+				  <p><small>Si la obra no se hizo o se hizo mal, o si creemos que el barrio necesita una nueva obra, o si un servicio público funciona mal, entonces</small></p>
 				  <h1 class="upper bold-italic" style="margin-top: 0">Reclamamos <br/><small>en la plataforma</small></h1>
 				  <a href="<?php echo url::site()."reports/submit";?>" class="btn btn-lg bold-italic btn-danger upper">Hacé tu reclamo</a>
 				  </div>
@@ -106,7 +105,7 @@
 				
 				<div class="col-md-12 col-xs-12 text-center" style="padding-top: 20px;">
 				  <h1 class="upper bold-italic" style="margin-top: 0; color:#fff">
-					UNA HERRAMIENTA MÁS PARA HACER <br/>
+					TENEMOS UNA HERRAMIENTA MÁS PARA HACER <br/>
 					VALER NUESTROS DERECHOS</h1>
 				</div>
 				 

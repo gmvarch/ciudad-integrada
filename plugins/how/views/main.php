@@ -42,7 +42,7 @@
                      <div class="col-md-6 text-center">
                       <img class="img-rounded" alt="Paso 04 - Marcá en el mapa" src="<?php echo url::file_loc('images'); ?>themes/ci-theme/images/guia-uso/paso-04.png">
                       <h1 class="upper red bold-italic">04 - Marcá en el mapa!</h1>
-                      <p>Decinos donde está el problema (manzana, calle, casa, etc) y marcalo en el mapa!</p>
+                      <p>¡Decinos dónde está el problema (manzana, calle, casa, etc.) y marcalo en el mapa!</p>
                     </div>
                 </div>  
 
@@ -56,7 +56,7 @@
                      <div class="col-md-6 text-center">
                       <img class="img-rounded" alt="Paso 05 - Recibido" src="<?php echo url::file_loc('images'); ?>themes/ci-theme/images/guia-uso/paso-02.png">
                       <h1 class="upper red bold-italic">06 - Finalizamos!</h1>
-                      <p>¡Ya recibimos tu reclamo, te vamos a escribir para avisarte los pasos a seguir!</p>
+                      <p> ¡Ya recibimos tu reclamo! Te vamos a escribir para avisarte los pasos a seguir.</p>
                     </div>
                 </div>  
                 

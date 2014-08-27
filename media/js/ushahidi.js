@@ -559,7 +559,7 @@
 		if (save !== undefined && save) {
 			this._registry.push({layerType: layerType, options: options});
 		}
-
+		
 		// Save the layer name to keep on top
 		if (keepOnTop !== undefined && keepOnTop) {
 			this._onTop.push(options.name);
@@ -574,7 +574,7 @@
 				feature.geometry.y = point.y;
 			}
 		}
-
+		
 		// Layer options
 		var layerOptions = {
 			projection: Ushahidi.proj_4326,
@@ -606,7 +606,7 @@
 				fetchURL = fetchURL.substring(0, index);
 
 				for (var i=0; i<args.length; i++) {
-					params.push(args[i]);
+					params.push(args[i]);					
 				}
 			}
 
@@ -752,7 +752,7 @@
 	 * Gets the set of filters used to filter the reports on the map
 	 */
 	Ushahidi.Map.prototype.getReportFilters = function() {
-		return this._reportFilters;
+		return this._reportFilters;		
 	}
 
 	/**
@@ -764,7 +764,7 @@
 	Ushahidi.Map.prototype.refresh = function(e) {
 		if (this._isLoaded) {
 			// Update the zoom and redraw
-			this._reportFilters.z = this._olMap.getZoom();
+			this._reportFilters.z = this._olMap.getZoom();			
 			this.redraw();
 		}
 		return this;
@@ -801,6 +801,7 @@
 		zoom_point = event.feature.geometry.getBounds().getCenterLonLat();
 		lon = zoom_point.lon;
 		lat = zoom_point.lat;
+		
 
 		// Image to display within the popup
 		var image = "";
@@ -818,20 +819,21 @@
 		var content = "<div class=\"infowindow\">" + image +
 		    "<div class=\"infowindow_content\">"+
 		    "<div class=\"infowindow_list\">"+event.feature.attributes.name+"</div>\n" +
-		    "<div class=\"infowindow_meta\">";
-
+		    "<div class=\"infowindow_meta\">" +
+		    "<div>"+event.feature.attributes.description+"</div>";
+		    
 		if (typeof(event.feature.attributes.link) != 'undefined' &&
 		    event.feature.attributes.link != '') {
 
 		    content += "<a href='"+event.feature.attributes.link+"'>" +
-			    "More Information</a><br/>";
+			    "Más Información</a><br/>";
 		}
 
 		content += "<a id=\"zoomIn\">";
-		content += "Zoom In</a>";
+		content += "Acercar</a>";
 		content += "&nbsp;&nbsp;|&nbsp;&nbsp;";
 		content += "<a id=\"zoomOut\">";
-		content += "Zoom Out</a></div>";
+		content += "Alejar</a></div>";
 		content += "</div><div style=\"clear:both;\"></div></div>";		
 
 		if (content.search("<script") != -1) {
@@ -1078,7 +1080,7 @@
 		// Get the current map center
 		var point  = new OpenLayers.LonLat(longitude, latitude);
 		point.transform(Ushahidi.proj_4326, Ushahidi.proj_900913);
-
+		
 		// Move the map to the new center
 		this._olMap.moveTo(point);
 
@@ -1099,7 +1101,7 @@
 		// point for the radius
 		var markers = new OpenLayers.Layer.Markers("radiusmarker");
 		markers.addMarker(new OpenLayers.Marker(point));
-
+		
 		this._olMap.addLayers([radiusLayer, markers]);
 
 	}
@@ -1113,8 +1115,7 @@
 	Ushahidi.Map.prototype.updateBaseLayer = function(layerName) {
 		var layers =  this._olMap.getLayersByName(layerName);
 		if (layers.length < 1)
-			throw "Layer " + layerName + " not found";
-
+			throw "Layer " + layerName + " not found";			
 		layers[0].setVisibility(true);
 		this._olMap.setBaseLayer(layers[0]);
 	}
