@@ -66,7 +66,7 @@
 			
 			<div class="blog-post" id="faq-5">
 				<h1 class="bold-italic blue">¿Quién puede realizar un pedido de información?</h1>   
-				<p>Cualquiera puede hacer un pedido de información. Sólo tenés que dejarnos una dirección de correo electrónico o un teléfono para que podamos hacerte llegar las respuestas que obtengamos. /p>
+				<p>Cualquiera puede hacer un pedido de información. Sólo tenés que dejarnos una dirección de correo electrónico o un teléfono para que podamos hacerte llegar las respuestas que obtengamos. </p>
 			</div>
 			
 			<div class="blog-post" id="faq-6">

@@ -240,8 +240,9 @@ class Json_Controller extends Template_Controller {
 				'timestamp' => strtotime($marker->incident_date),
 				'count' => 1,
 				'class' => get_class($marker),
-				'title'  => $marker->incident_title
-			);
+				'title'  => $marker->incident_title,
+				'description' => $marker->incident_description
+			); 
 			$json_item['geometry'] = array(
 				'type' => 'Point',
 				'coordinates' => array($longitude, $latitude)
