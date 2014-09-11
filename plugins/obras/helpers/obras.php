@@ -326,7 +326,7 @@ class obras_Core {
 		//> END PARAMETER FETCH
 		array_push(self::$params,
 					'(c.id IN (13) OR c.parent_id IN (13))',
-					'c.category_visible = 0'
+					'c.category_visible = 1'
 				);
 		/*
 		 * array_push(self::$params,
