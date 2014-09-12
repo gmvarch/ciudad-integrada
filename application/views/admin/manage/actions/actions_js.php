@@ -27,7 +27,7 @@ $(document).ready(function() {
 	// Now initialize the map
 	var options = {
 	units: "dd"
-	, numZoomLevels: 18
+	, numZoomLevels: 16
 	, controls:[],
 	projection: proj_900913,
 	'displayProjection': proj_4326,

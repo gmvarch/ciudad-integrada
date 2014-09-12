@@ -25,7 +25,7 @@
 			// Create the default options
 			options = {
 				units: "dd",
-				numZoomLevels: 17,
+				numZoomLevels: 16,
 				theme: false,
 				controls: [],
 				projection: proj_900913,
