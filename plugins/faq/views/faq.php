@@ -25,7 +25,7 @@
 			  <a href="#faq-5" class="list-group-item">¿Quién puede realizar un pedido de información?</a>
 			  <a href="#faq-6" class="list-group-item">¿Cómo hago un pedido de información?</a>
 			  <a href="<?php echo url::site()."how"; ?>" class="list-group-item">¿Cómo Funciona?</a>
-			  <a href="<?php echo url::site()."contact"; ?>" class="list-group-item">Reportar error</a>
+			  <a href="<?php echo url::site()."contact"; ?>" class="list-group-item">Contactanos</a>
 			</div>
 		</div>
 

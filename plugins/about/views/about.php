@@ -48,7 +48,7 @@
 					<p>¿Qué obra debe hacerse? ¿Qué presupuesto tiene? ¿Quién es el encargado de hacerlo?</p>
 
 					<a href="<?php echo url::site()."ci_ask/submit";?>" class="btn btn-lg bold-italic btn-danger upper">Pedí info</a>
-					  <p><small>Escribinos tu pregunta a través de “Pedí Información”. Desde ACIJ nos encargamos de hacer el pedido formal a los organismos que correspondan y enviarte las respuestas.</small></p>
+					  <p><small>Escribínos tu pregunta a través de “Pedidos de info”. Desde ACIJ nos encargamos de hacer el pedido formal a los organismos que correspondan y enviarte las respuestas.</small></p>
 				</div>
 
 			</div>  
@@ -73,12 +73,12 @@
 				</div>
 				<div class="col-md-4 col-xs-10 text-left" style="padding-top: 20px;">
 				  <p><small>Si la obra no se hizo o se hizo mal, o si creemos que el barrio necesita una nueva obra, o si un servicio público funciona mal, entonces</small></p>
-				  <h1 class="upper bold-italic" style="margin-top: 0">Reclamamos <br/><small>en la plataforma</small></h1>
+				  <h1 class="upper bold-italic" style="margin-top: 0">Reclamamos</h1><h3 class="bold" style="color: #333; margin-top:0; text-transform: uppercase;"> en la plataforma</h3>
 				  <a href="<?php echo url::site()."reports/submit";?>" class="btn btn-lg bold-italic btn-danger upper">Hacé tu reclamo</a>
 				  </div>
 				  
 				  <div class="col-md-6 col-md-offset-1 text-left" style="padding-top: 20px;">
-					<p>Con los reclamos registrados, nos proponemos:</p>
+					 <h3 class="bold-italic blue" style="margin-top:0;">Con los reclamos registrados, nos proponemos:</h3>
 					<ul> <li>Iniciar <strong>acciones legales</strong> de los temas más relevantes de cada barrio.  </li>
 						<li>Realizar <strong>informes periódicos</strong> al gobierno con los reportes registrados.</li>
 						<li>Hacer <strong>pedidos de información pública</strong> relacionados a los reclamos.</li>

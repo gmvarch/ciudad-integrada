@@ -15,6 +15,7 @@
 	 */
 	function createMap(targetElement, lat, lon, zoomLevel, options, controls)
 	{
+		
 		if (typeof targetElement == 'undefined' 
 		    || $("#"+targetElement) == null) {
 			return;
@@ -59,7 +60,7 @@
 			map.addControls(controls);
 		}
 
-		
+
 		// Check for the zoom level
 		var zoom = (typeof zoomLevel == 'undefined' || zoomLevel < 1)
 		    ? 9 : zoomLevel;

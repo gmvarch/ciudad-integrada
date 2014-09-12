@@ -73,7 +73,7 @@ class layercv {
 		$layer->openlayers = "XYZ";
 		$layer->title = 'Caminos de la Villa Streets';
 		$layer->description = '.';
-		//$layer->numZoomLevels = '18';
+		$layer->numZoomLevels = '17';
 		$layer->api_url = '';
 		$layer->data = array(
 			'baselayer' => TRUE,

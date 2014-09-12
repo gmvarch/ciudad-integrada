@@ -138,7 +138,11 @@
 	                          	<h3><?php echo Kohana::lang('ui_main.reports_description');?></h3>
 
 	                          	<p><?php echo html::clean(nl2br($incident_description)); ?></p>	                         
-
+								<p>
+								<?php								
+									Event::run('ushahidi_action.report_meta', $incident_id);
+								?>
+								</p>
 	                      	</div>
 
 	                    </div>  <!-- /. the-content --> 
@@ -185,7 +189,7 @@
 					</div> <!-- /. colleft -->
 					<div class="col-md-4 col-xs-12 colleft">
 						<div class="buttons">
-                          <a href="<?php echo url::site()."reports/submit"; ?>" role="button" class="btn btn-lg btn-danger upper bold-italic">NUEVO RECLAMO<?php// echo Kohana::lang('ui_main.submit'); ?></a>
+                          <a href="<?php echo url::site()."reports/submit"; ?>" role="button" class="btn btn-lg btn-danger upper bold-italic">HACÉ TU RECLAMO<?php// echo Kohana::lang('ui_main.submit'); ?></a>
                           <a href="<?php echo url::site()."contact"; ?>" type="button" class="btn btn-lg btn-warning upper bold-italic">Informar Error</a> 
                           <!--<button type="button" class="btn btn-lg btn-success upper bold-italic">Seguir Reporte</button> -->
                         </div>

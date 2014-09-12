@@ -391,14 +391,15 @@ class map_Core {
 		$layer->active = TRUE;
 		$layer->name = 'osm_mapnik';
 		$layer->openlayers = "OSM.Mapnik";
-		$layer->title = 'OSM Mapnik';
+		$layer->title = 'OSM Mapnik__';
 		$layer->description = 'The main OpenStreetMap map';
+		$layer->numZoomLevels = 14;
 		$layer->api_url = Kohana::config('core.site_protocol').'://www.openstreetmap.org/openlayers/OpenStreetMap.js';
 		$layer->data = array(
 			'baselayer' => TRUE,
 			'attribution' => '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
 			'url' => 'http://tile.openstreetmap.org/${z}/${x}/${y}.png',
-			'type' => '',
+			'type' => '',			
 			'transitionEffect' => 'resize',
 		);
 		$layers[$layer->name] = $layer;

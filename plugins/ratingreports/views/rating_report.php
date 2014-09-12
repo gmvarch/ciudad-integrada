@@ -1,19 +1,24 @@
 <?php
-if ($logged_in != '0' && $user_vote != '0') {
+$opt_nunca = 0;
+$opt_mal = 10;
+$opt_frenada = 5;
+$opt_terminada = 21;
+
+if ($logged_in != '0' && $user_vote != '1') {	
 ?>
 <h2>Resultados del monitoreo</h2>
 <div id="chart_div" style="width: 100%; height: 200px;"></div>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">
-	google.load("visualization", "1.1", {packages:["corechart"]});
+	google.load("visualization", "1", {packages:["corechart"]});
 	google.setOnLoadCallback(drawChart);
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['La obra ..', 'Votos', { role: 'style' }],
-			['Nunca se hizo', 8, '#d9534f'],            // RGB value
-			['Se hizo mal', 10, '#f0ad4e'],            // English color name
-			['Está frenada', 19, '#5bc0de'],
-			['Está terminada', 21, '#5cb85c' ], // CSS-style declaration
+			['Nunca se hizo', <?php echo $opt_nunca ?>, '#d9534f'],           
+			['Se hizo mal', <?php echo $opt_mal ?>, '#f0ad4e'],          
+			['Está frenada', <?php echo $opt_frenada ?>, '#5bc0de'],
+			['Está terminada', <?php echo $opt_terminada ?>, '#5cb85c' ], 
 		]);
 		
 		var view = new google.visualization.DataView(data);
@@ -29,10 +34,11 @@ if ($logged_in != '0' && $user_vote != '0') {
 			title: 'Estado de la obra',   
 			legend: { position: 'none' },
 			bar: { groupWidth: '90%' },
-			vAxis: {gridlines: { color:'#FFF', count: '0'}}
+			vAxis: {gridlines: { color:'#FFF', count: '0'}},
+			tooltip: { trigger: 'none' }
 		};
 		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-		chart.draw(data, options);
+		chart.draw(view, options);
 	}
 </script>
 <?php
