@@ -377,7 +377,7 @@
 		// Map options
 		var mapOptions = {
 			units: "dd",
-			numZoomLevels: 18,
+			numZoomLevels: 17,
 			theme: false,
 			controls: [],
 			projection: Ushahidi.proj_900913,

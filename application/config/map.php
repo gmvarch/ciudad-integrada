@@ -49,7 +49,7 @@ $config['layers'] = array();
  * If maxZoomLevel - minZoomLevel > numZoomLevels then numZoomLevels has priority
  */
 
-$config['numZoomLevels'] = "21";
+$config['numZoomLevels'] = "18";
 
 
 /**
