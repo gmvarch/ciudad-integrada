@@ -238,7 +238,7 @@ class Obras_Controller extends Main_Controller {
 	public function view($id = FALSE)
 	{
 		$this->template->header->this_page = 'obras';
-		$this->template->content = new View('detail');
+		$this->template->content = new View('detail_obra');
 
 		// Load Akismet API Key (Spam Blocker)
 		$api_akismet = Kohana::config('settings.api_akismet');

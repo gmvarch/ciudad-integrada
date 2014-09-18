@@ -58,10 +58,12 @@
 							foreach ($incident_category as $category)
 							{
 								// don't show hidden categoies
+								/*
 								if ($category->category->category_visible == 0)
 								{
 									continue;
 								}
+								*/
 									$style = "background-color:#".$category->category->category_color;
 								
 								?>
@@ -137,8 +139,8 @@
 
 	                          	<h3><?php echo Kohana::lang('ui_main.reports_description');?></h3>
 
-	                          	<p><?php echo html::clean(nl2br($incident_description)); ?></p>	   
-	                          	<!-- start additional fields -->
+	                          	<p><?php echo html::clean(nl2br($incident_description)); ?></p>	 
+
 								<?php if(strlen($custom_forms) > 0) { ?>
 								<div class="credibility">
 								<h5><?php echo Kohana::lang('ui_main.additional_data');?></h5>
@@ -149,12 +151,21 @@
 								?>
 								<br/>
 								</div>
-								<?php } ?>                      
+								<?php } ?> 
 								<p>
 								<?php								
-									Event::run('ushahidi_action.report_meta', $incident_id);
+								Event::run('ushahidi_action.report_meta', $incident_id);
 								?>
-								</p>
+								</p>                    
+	                          	<br><br>
+								
+								<?php
+									$link =  "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+									$escaped_link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8');
+								?>
+	                          	<div class="fb-comments" data-width="100%" date-href="<?php echo $escaped_link; ?>" data-numposts="5" data-colorscheme="light"></div>
+	                          	<div id="status" style="display:none"></div>                        
+
 	                      	</div>
 
 	                    </div>  <!-- /. the-content --> 
@@ -201,8 +212,10 @@
 					</div> <!-- /. colleft -->
 					<div class="col-md-4 col-xs-12 colleft">
 						<div class="buttons">
-                          <a href="<?php echo url::site()."reports/submit"; ?>" role="button" class="btn btn-lg btn-danger upper bold-italic">HACÉ TU RECLAMO<?php// echo Kohana::lang('ui_main.submit'); ?></a>
-                          <a href="<?php echo url::site()."contact"; ?>" type="button" class="btn btn-lg btn-warning upper bold-italic">Informar Error</a> 
+                          <a href="<?php echo url::site()."contact"; ?>" type="button" class="btn btn-lg btn-info upper bold-italic">Informar Error</a> 
+                          
+
+
                           <!--<button type="button" class="btn btn-lg btn-success upper bold-italic">Seguir Reporte</button> -->
                         </div>
 						<div id="denuncias-cercanas">
