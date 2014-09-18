@@ -238,7 +238,7 @@ class Obras_Controller extends Main_Controller {
 	public function view($id = FALSE)
 	{
 		$this->template->header->this_page = 'obras';
-		$this->template->content = new View('detail_obra');
+		$this->template->content = new View('obra_detail');
 
 		// Load Akismet API Key (Spam Blocker)
 		$api_akismet = Kohana::config('settings.api_akismet');
@@ -256,7 +256,7 @@ class Obras_Controller extends Main_Controller {
 			// Not Found
 			if ( ! $incident->loaded) 
 			{
-				url::redirect('reports/view/');
+				url::redirect('obras/view/');
 			}
 
 			// Comment Post?
@@ -398,11 +398,11 @@ class Obras_Controller extends Main_Controller {
 								Kohana::lang('notifications.admin_new_comment.subject'),
 								Kohana::lang('notifications.admin_new_comment.message')
 								."\n\n'".utf8::strtoupper($incident->incident_title)."'"
-								."\n".url::site('reports/view/'.$id)
+								."\n".url::site('obras/view/'.$id)
 							);
 					}
 					// Redirect
-					url::redirect('reports/view/'.$id);
+					url::redirect('obras/view/'.$id);
 				
 				}
 				else
