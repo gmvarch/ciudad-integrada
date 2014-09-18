@@ -49,7 +49,7 @@
 						$incident_id = $incident->incident_id;
 						$incident_title = $incident->incident_title;
 						$incident_description = $incident->incident_description;
-						$incident_url = Incident_Model::get_url($incident_id);
+						$incident_url = 'http:/www.caminosdelavilla.org/obras/view/'.$incident_id;
 						//$incident_category = $incident->incident_category;
 						// Trim to 150 characters without cutting words
 						// XXX: Perhaps delcare 150 as constant
@@ -134,8 +134,7 @@
 								$categories = ORM::Factory('category')->join('incident_category', 'category_id', 'category.id')->where('incident_id', $incident_id)->find_all();
 								foreach ($categories as $category): ?>
 									
-									<?php // Don't show hidden categories ?>
-									<?php if($category->category_visible == 0) continue; ?>
+									<?php // Don't show hidden categories ?>									
 							
 									<?php if ($category->category_image_thumb): ?>
 										<?php $category_image = url::site(Kohana::config('upload.relative_directory')."/".$category->category_image_thumb); ?>
