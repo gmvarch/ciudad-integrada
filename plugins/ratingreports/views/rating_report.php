@@ -15,8 +15,8 @@ if ($logged_in != '0' && $user_vote != '1') {
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['La obra ..', 'Votos', { role: 'style' }],
-			['Nunca se hizo', <?php echo $opt_nunca ?>, '#d9534f'],           
-			['Se hizo mal', <?php echo $opt_mal ?>, '#f0ad4e'],          
+			['Nunca se hizó', <?php echo $opt_nunca ?>, '#d9534f'],           
+			['Se hizó mal', <?php echo $opt_mal ?>, '#f0ad4e'],          
 			['Está frenada', <?php echo $opt_frenada ?>, '#5bc0de'],
 			['Está terminada', <?php echo $opt_terminada ?>, '#5cb85c' ], 
 		]);
@@ -44,10 +44,10 @@ if ($logged_in != '0' && $user_vote != '1') {
 <?php
 } else {
 ?>
-<h2>Monitorea la obra</h2>
+<h2>Monitoreá la obra</h2>
 <div id="options" class="">
-	<button type="button" class="btn btn-danger btn-cons">Nunca se hizo</button>
-	<button type="button" class="btn btn-warning btn-cons">Se hizo mal</button>
+	<button type="button" class="btn btn-danger btn-cons">Nunca se hizó</button>
+	<button type="button" class="btn btn-warning btn-cons">Se hizó mal</button>
 	<button type="button" class="btn btn-info btn-cons">Está frenada</button>
 	<button type="button" class="btn btn-success btn-cons">Está terminada</button>
 </div>

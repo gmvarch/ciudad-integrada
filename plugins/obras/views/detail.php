@@ -137,7 +137,19 @@
 
 	                          	<h3><?php echo Kohana::lang('ui_main.reports_description');?></h3>
 
-	                          	<p><?php echo html::clean(nl2br($incident_description)); ?></p>	                         
+	                          	<p><?php echo html::clean(nl2br($incident_description)); ?></p>	   
+	                          	<!-- start additional fields -->
+								<?php if(strlen($custom_forms) > 0) { ?>
+								<div class="credibility">
+								<h5><?php echo Kohana::lang('ui_main.additional_data');?></h5>
+								<?php
+
+									echo $custom_forms;
+
+								?>
+								<br/>
+								</div>
+								<?php } ?>                      
 								<p>
 								<?php								
 									Event::run('ushahidi_action.report_meta', $incident_id);
