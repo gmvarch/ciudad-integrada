@@ -5,6 +5,7 @@
 application/logs/*
 application/cache/*
 media/uploads/*
+installer/*
 application/config/auth.php
 application/config/config.php
 application/config/database.php

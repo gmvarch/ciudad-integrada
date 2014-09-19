@@ -49,7 +49,7 @@
 						$incident_id = $incident->incident_id;
 						$incident_title = $incident->incident_title;
 						$incident_description = $incident->incident_description;
-						$incident_url = 'view/'.$incident_id;
+						$incident_url = url::site() . 'obras/view/' . $incident_id; 
 						//$incident_category = $incident->incident_category;
 						// Trim to 150 characters without cutting words
 						// XXX: Perhaps delcare 150 as constant
