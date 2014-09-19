@@ -10,7 +10,7 @@
  * @license	   http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License (LGPL) 
  */
 
-class obras {
+class obraspublicas {
 	/**
 	 *  Registers the main event add method
 	**/ 
@@ -25,31 +25,14 @@ class obras {
 	**/
 	public function add()
 	{
-		// Only add the events if we are on that controller
-		if (Router::$controller == 'obras')
-		{
-			switch (Router::$method)
-			{
-				// Hook into the User Report view 
-				case 'view':					
-					Event::add('ushahidi_action.report_meta', array($this, '_obra_view'));
-					break;
-			}
-		}
+
 		
 	}
 	
 	
 
-	/**
-	 * Render the Incident Status Information to the Report on the front end
-	 */
-	public function _obra_view()
-	{
-		$report = View::factory('report');
-		$report->render(TRUE);		
-	}
+
 	
 }
 
-new obras;
+new obraspublicas;
