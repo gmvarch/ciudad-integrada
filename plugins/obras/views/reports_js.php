@@ -38,7 +38,7 @@
 	
 	if (urlParameters.length == 0)
 	{
-		urlParameters = {};
+		urlParameters["c"] = ["13"];
 	}
 	
 	$(document).ready(function() {
@@ -241,7 +241,8 @@
 			$("input[id^='custom_field_']:text").val("");
 			
 			// Reset the url parameters
-			urlParameters = {};
+			//urlParameters = {};
+			urlParameters["c"] = ["13"];
 		
 			// Fetch all reports
 			fetchReports();
@@ -549,7 +550,7 @@
 		}
 		
 		// Get the content for the new page
-		$.get('<?php echo url::site().'reports/fetch_reports'?>',
+		$.get('<?php echo url::site().'obras/fetch_reports'?>',
 			urlParameters,
 			function(data) {
 				if (data != null && data != "" && data.length > 0) {

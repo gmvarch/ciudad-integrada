@@ -125,10 +125,17 @@ class category_Core {
 	 *
 	 * @return string
 	 */
-	public static function get_category_tree_view()
+	// si tiene id se pasa y si la opcion es false todos los hijos de ese id, si la opcion true, muestra todos
+	public static function get_category_tree_view($id_parent = 0, $op = FALSE)
 	{
-		$category_data = self::get_category_tree_data(TRUE);
-		
+		if($id_parent = 0)
+		{
+			$category_data = self::get_category_tree_data(TRUE);
+		}
+		else 
+		{
+			$category_data = self::get_category_tree_data(TRUE, FALSE, $id_parent, $op);
+		}
 		// Generate and return the HTML
 		return self::_generate_treeview_html($category_data);
 	}
@@ -139,7 +146,7 @@ class category_Core {
 	 * @param bool Include hidden categories
 	 * @return array
 	 **/
-	public static function get_category_tree_data($count = FALSE, $include_hidden = FALSE)
+	public static function get_category_tree_data($count = FALSE, $include_hidden = FALSE, $id_parent=0, $op = FALSE)
 	{
 		
 		// To hold the category data
@@ -265,7 +272,7 @@ class category_Core {
 							. "<a href=\"#\" class=\"cat_selected\" id=\"filter_link_cat_".$id."\" title=\"{$category['category_description']}\">"
 							. "<span class=\"item-swatch\" style=\"background-color: #".$category['category_color']."\">$category_image</span>"
 							. "<span class=\"item-title\">".html::strip_tags($category['category_title'])."</span>"
-							. "<span class=\"item-count\">".$category['report_count']."</span>"
+							. "<!--<span class=\"item-count\">".$category['report_count']."</span>-->"
 							. "</a></li>";
 							
 			$tree_html .= self::_generate_treeview_html($category['children']);

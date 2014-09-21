@@ -218,6 +218,7 @@
 
                           <!--<button type="button" class="btn btn-lg btn-success upper bold-italic">Seguir Reporte</button> -->
                         </div>
+                        <!--
 						<div id="denuncias-cercanas">
 							<h3 class="section-title">
 								<?php echo Kohana::lang('ui_main.additional_reports');?>
@@ -238,7 +239,8 @@
 							    	<?php } ?>
 	                    		</ul>
 	                        </div>
-                        </div>
+                        </div
+                        -->
 						<!-- start news source link -->
 						<?php if( count($incident_news) > 0 ) { ?>
 						<h3 class="section-title">Otros Reclamos<?php //echo Kohana::lang('ui_main.reports_news');?></h3>

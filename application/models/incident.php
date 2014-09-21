@@ -75,7 +75,7 @@ class Incident_Model extends ORM {
 			// Create a list of all categories
 			$categories[$category->id] = array(
 				$category->category_title, 
-				$category->category_color
+				$category->category_color				
 			);
 		}
 		return $categories;

@@ -619,6 +619,12 @@ class Reports_Controller extends Main_Controller {
 			$this->template->content->incident_time = date('H:i', strtotime($incident->incident_date));
 			$this->template->content->incident_category = $incident->incident_category;
 
+			//si es de la categoria obras publicas redirect
+			$categories = $incident->incident_category;
+			foreach ($categories as $category): 				
+				if ($category->category->parent_id == 13){ url::redirect('obras/view/'.$incident->id);}
+			endforeach;
+
 			// Incident rating
 			$this->template->content->incident_rating = $this->_get_rating($incident->id, 'original');
 

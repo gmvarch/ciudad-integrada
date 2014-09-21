@@ -40,7 +40,7 @@
 		<div class="r_cat_tooltip"><a href="#" class="r-3"></a></div>
 		<div class="rb_list-and-map-box">
 			<div id="rb_list-view">
-			<?php
+			<?php				
 				foreach ($incidents as $incident)
 				{
 					$incident_id = $incident->incident_id;

@@ -816,11 +816,11 @@
 			image += "</div>";
 		}
 
-		var content = "<div class=\"infowindow\">" + image +
-		    "<div class=\"infowindow_content\">"+
-		    "<div class=\"infowindow_list\">"+event.feature.attributes.name+"</div>\n" +
-		    "<div class=\"infowindow_meta\">" +
-		    "<div>"+event.feature.attributes.description+"</div>";
+		var content = "<div class=\"infowindow\" style=\"margin-top:-5px; overflow: hidden\">" + image +
+		    "<div class=\"infowindow_content\" style=\"width:280px;\">"+
+		    "<div class=\"infowindow_list\" style=\"margin-bottom:5px;\" >"+event.feature.attributes.name+"</div>\n" +
+		    "<div class=\"infowindow_meta\" style=\"font-size:80%;\">" +
+		    "<div style=\"margin-bottom:5px;\" >"+event.feature.attributes.description+"</div>";
 		    
 		if (typeof(event.feature.attributes.link) != 'undefined' &&
 		    event.feature.attributes.link != '') {
@@ -828,13 +828,14 @@
 		    content += "<a href='"+event.feature.attributes.link+"'>" +
 			    "Más Información</a><br/>";
 		}
-
+		content += "<div style=\"margin-right: 5px; text-align:right \" >";
 		content += "<a id=\"zoomIn\">";
 		content += "Acercar</a>";
 		content += "&nbsp;&nbsp;|&nbsp;&nbsp;";
 		content += "<a id=\"zoomOut\">";
 		content += "Alejar</a></div>";
 		content += "</div><div style=\"clear:both;\"></div></div>";		
+		content += "</div>";
 
 		if (content.search("<script") != -1) {
 			content = "Content contained Javascript! Escaped content " +

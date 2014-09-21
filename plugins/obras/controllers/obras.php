@@ -240,9 +240,7 @@ class Obras_Controller extends Main_Controller {
 		$this->template->header->this_page = 'obras';
 		$this->template->content = new View('obra_detail');
 
-		// Load Akismet API Key (Spam Blocker)
-		$api_akismet = Kohana::config('settings.api_akismet');
-
+	
 		// Sanitize the report id before proceeding
 		$id = intval($id);
 
@@ -262,160 +260,6 @@ class Obras_Controller extends Main_Controller {
 			// Comment Post?
 			// Setup and initialize form field names
 
-			$form = array(
-				'comment_author' => '',
-				'comment_description' => '',
-				'comment_email' => '',
-				'comment_ip' => '',
-				'captcha' => ''
-			);
-
-			$captcha = Captcha::factory();
-			$errors = $form;
-			$form_error = FALSE;
-
-			// Check, has the form been submitted, if so, setup validation
-
-			if ($_POST AND Kohana::config('settings.allow_comments') )
-			{
-				// Instantiate Validation, use $post, so we don't overwrite $_POST fields with our own things
-				$post = Validation::factory($_POST);
-
-				// Add some filters
-				$post->pre_filter('trim', TRUE);
-
-				// Add some rules, the input field, followed by a list of checks, carried out in order
-				if ( ! $this->user)
-				{
-					$post->add_rules('comment_author', 'required', 'length[3,100]');
-					$post->add_rules('comment_email', 'required','email', 'length[4,100]');
-				}
-				$post->add_rules('comment_description', 'required');
-				$post->add_rules('captcha', 'required', 'Captcha::valid');
-
-				// Test to see if things passed the rule checks
-				if ($post->validate())
-				{
-					// Yes! everything is valid
-					if ($api_akismet != "")
-					{
-						// Run Akismet Spam Checker
-						$akismet = new Akismet();
-
-						// Comment data
-						$comment = array(
-							'website' => "",
-							'body' => $post->comment_description,
-							'user_ip' => $_SERVER['REMOTE_ADDR']
-						);
-
-						if ($this->user)
-						{
-							$comment['author'] = $this->user->name;
-							$comment['email'] = $this->user->email;
-						}
-						else
-						{
-							$comment['author'] = $post->comment_author;
-							$comment['email'] = $post->comment_email;
-						}
-
-						$config = array(
-							'blog_url' => url::site(),
-							'api_key' => $api_akismet,
-							'comment' => $comment
-						);
-
-						$akismet->init($config);
-
-						if ($akismet->errors_exist())
-						{
-							if ($akismet->is_error('AKISMET_INVALID_KEY'))
-							{
-								// throw new Kohana_Exception('akismet.api_key');
-							}
-							elseif ($akismet->is_error('AKISMET_RESPONSE_FAILED'))
-							{
-								// throw new Kohana_Exception('akismet.server_failed');
-							}
-							elseif ($akismet->is_error('AKISMET_SERVER_NOT_FOUND'))
-							{
-								// throw new Kohana_Exception('akismet.server_not_found');
-							}
-
-							$comment_spam = 0;
-						}
-						else
-						{
-							$comment_spam = ($akismet->is_spam()) ? 1 : 0;
-						}
-					}
-					else
-					{
-						// No API Key!!
-						$comment_spam = 0;
-					}
-
-					$comment = new Comment_Model();
-					$comment->incident_id = $id;
-					if ($this->user)
-					{
-						$comment->user_id = $this->user->id;
-						$comment->comment_author = $this->user->name;
-						$comment->comment_email = $this->user->email;
-					}
-					else
-					{
-						$comment->comment_author = $post->comment_author;
-						$comment->comment_email = $post->comment_email;
-					}
-					$comment->comment_description = $post->comment_description;
-					$comment->comment_ip = $_SERVER['REMOTE_ADDR'];
-					$comment->comment_date = date("Y-m-d H:i:s",time());
-
-					// Activate comment for now
-					if ($comment_spam == 1)
-					{
-						$comment->comment_spam = 1;
-						$comment->comment_active = 0;
-					}
-					else
-					{
-						$comment->comment_spam = 0;
-						$comment->comment_active = (Kohana::config('settings.allow_comments') == 1)? 1 : 0;
-					}
-					$comment->save();
-
-					// Event::comment_add - Added a New Comment
-					Event::run('ushahidi_action.comment_add', $comment);
-
-					// Notify Admin Of New Comment
-					// HT: Ensure only valid comments not spam are sent out
-					// as notifications to the administrator
-					if ($comment_spam == 0) { 
-						$send = notifications::notify_admins(
-							"[".Kohana::config('settings.site_name')."] ".
-								Kohana::lang('notifications.admin_new_comment.subject'),
-								Kohana::lang('notifications.admin_new_comment.message')
-								."\n\n'".utf8::strtoupper($incident->incident_title)."'"
-								."\n".url::site('obras/view/'.$id)
-							);
-					}
-					// Redirect
-					url::redirect('obras/view/'.$id);
-				
-				}
-				else
-				{
-					// No! We have validation errors, we need to show the form again, with the errors
-					// Repopulate the form fields
-					$form = arr::overwrite($form, $post->as_array());
-
-					// Populate the error fields, if any
-					$errors = arr::overwrite($errors, $post->errors('comments'));
-					$form_error = TRUE;
-				}
-			}
 
 			// Filters
 			$incident_title = $incident->incident_title;
@@ -423,7 +267,7 @@ class Obras_Controller extends Main_Controller {
 			Event::run('ushahidi_filter.report_title', $incident_title);
 			Event::run('ushahidi_filter.report_description', $incident_description);
 
-			$this->template->header->page_title .= $incident_title.Kohana::config('settings.title_delimiter');
+			//$this->template->header->page_title .= $incident_title.Kohana::config('settings.title_delimiter');
 
 			// Add Features
 			$this->template->content->features_count = $incident->geometry->count();
@@ -439,7 +283,7 @@ class Obras_Controller extends Main_Controller {
 			$this->template->content->incident_category = $incident->incident_category;
 
 			// Incident rating
-			$this->template->content->incident_rating = $this->_get_rating($incident->id, 'original');
+			//$this->template->content->incident_rating = $this->_get_rating($incident->id, 'original');
 
 			// Retrieve Media
 			$incident_news = array();
@@ -467,18 +311,6 @@ class Obras_Controller extends Main_Controller {
 
 			$this->template->content->incident_verified = $incident->incident_verified;
 
-			// Retrieve Comments (Additional Information)
-			$this->template->content->comments = "";
-			if (Kohana::config('settings.allow_comments'))
-			{
-				$this->template->content->comments = new View('comments');
-				$incident_comments = array();
-				if ($id)
-				{
-					$incident_comments = Incident_Model::get_comments($id);
-				}
-				$this->template->content->comments->incident_comments = $incident_comments;
-			}
 		}
 		else
 		{
@@ -519,19 +351,6 @@ class Obras_Controller extends Main_Controller {
 		$this->template->content->custom_forms = new View('detail_custom_forms');
 		$form_field_names = customforms::get_custom_form_fields($id, $incident->form_id, FALSE, "view");
 		$this->template->content->custom_forms->form_field_names = $form_field_names;
-
-		// Are we allowed to submit comments?
-		$this->template->content->comments_form = "";
-		if (Kohana::config('settings.allow_comments'))
-		{
-			$this->template->content->comments_form = new View('comments_form');
-			$this->template->content->comments_form->user = $this->user;
-			$this->template->content->comments_form->form = $form;
-			$this->template->content->comments_form->form_field_names = $form_field_names;
-			$this->template->content->comments_form->captcha = $captcha;
-			$this->template->content->comments_form->errors = $errors;
-			$this->template->content->comments_form->form_error = $form_error;
-		}
 
 		// If the Admin is Logged in - Allow for an edit link
 		$this->template->content->logged_in = $this->logged_in;

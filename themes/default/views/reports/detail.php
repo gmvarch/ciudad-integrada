@@ -203,7 +203,7 @@
 			// Action::report_view_sidebar - This gives plugins the ability to insert into the sidebar (below the map and above additional reports)
 			Event::run('ushahidi_action.report_view_sidebar', $incident_id);
 		?>
-
+		
 		<div class="report-additional-reports">
 			<h4><?php echo Kohana::lang('ui_main.additional_reports');?></h4>
 			<?php foreach($incident_neighbors as $neighbor) { ?>
