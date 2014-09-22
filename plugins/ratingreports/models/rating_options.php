@@ -12,10 +12,8 @@
 
 class Rating_options_Model extends ORM
 {
-	protected $belongs_to = array('incident', 'rating', 'user');
 	// Database table name
-	protected $table_name = 'rating_options';
-	
+	protected $table_name = 'rating_options';	
 }
 
 

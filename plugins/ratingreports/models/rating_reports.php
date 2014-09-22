@@ -13,6 +13,8 @@
 class Rating_reports_Model extends ORM
 {
 	// Database table name
+	protected $belongs_to = array('incident', 'user');
+	
 	protected $table_name = 'rating_reports';
 	
 }

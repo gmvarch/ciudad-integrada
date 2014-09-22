@@ -37,14 +37,15 @@ class Rating_Reports_Controller extends Main_Controller {
 		$this->is_cachable = TRUE;
 		$this->template->header->this_page = 'rating_reports';
 		$this->template->content = new View('rating_reports');	
+		$this->template->user = $this->user->id;
 	}
 
 
-/**
-	 * Report Rating.
+	/**
+	 * Report monitorear.
 	 * @param boolean $id If id is supplied, a rating will be applied to selected report
 	 */
-	public function rating($id = false)
+	public function monitorear($id = false)
 	{
 		$this->template = "";
 		$this->auto_render = FALSE;
@@ -55,108 +56,53 @@ class Rating_Reports_Controller extends Main_Controller {
 		}
 		else
 		{
-			if (!empty($_POST['action']) AND !empty($_POST['type']))
+			$action = $_POST['cat'];
+
+			// Has this User or IP Address rated this post before?
+			if ($this->user)
 			{
-				$action = $_POST['action'];
-				$type = $_POST['type'];
-
-				// Is this an ADD(+1) or SUBTRACT(-1)?
-				if ($action == 'add')
-				{
-					$action = 1;
-				}
-				elseif ($action == 'subtract')
-				{
-					$action = -1;
-				}
-				else
-				{
-					$action = 0;
-				}
-
-				if (!empty($action) AND ($type == 'original' OR $type == 'comment'))
-				{
-					// Has this User or IP Address rated this post before?
-					if ($this->user)
-					{
-						$filter = array("user_id" => $this->user->id);
-					}
-					else
-					{
-						$filter = array("rating_ip" => $_SERVER['REMOTE_ADDR']);
-					}
-
-					if ($type == 'original')
-					{
-						$previous = ORM::factory('rating')
-							->where('incident_id',$id)
-							->where($filter)
-							->find();
-					}
-					elseif ($type == 'comment')
-					{
-						$previous = ORM::factory('rating')
-							->where('comment_id',$id)
-							->where($filter)
-							->find();
-					}
-
-					// If previous exits... update previous vote
-					$rating = new Rating_Model($previous->id);
-
-					// Are we rating the original post or the comments?
-					if ($type == 'original')
-					{
-						$rating->incident_id = $id;
-					}
-					elseif ($type == 'comment')
-					{
-						$rating->comment_id = $id;
-					}
-
-					// Is there a user?
-					if ($this->user)
-					{
-						$rating->user_id = $this->user->id;
-
-						// User can't rate their own stuff
-						if ($type == 'original')
-						{
-							if ($rating->incident->user_id == $this->user->id)
-							{
-								echo json_encode(array("status"=>"error", "message"=>"Can't rate your own Reports!"));
-								exit;
-							}
-						}
-						elseif ($type == 'comment')
-						{
-							if ($rating->comment->user_id == $this->user->id)
-							{
-								echo json_encode(array("status"=>"error", "message"=>"Can't rate your own Comments!"));
-								exit;
-							}
-						}
-					}
-
-					$rating->rating = $action;
-					$rating->rating_ip = $_SERVER['REMOTE_ADDR'];
-					$rating->rating_date = date("Y-m-d H:i:s",time());
-					$rating->save();
-
-					// Get total rating and send back to json
-					$total_rating = $this->_get_rating($id, $type);
-
-					echo json_encode(array("status"=>"saved", "message"=>"SAVED!", "rating"=>$total_rating));
-				}
-				else
-				{
-					echo json_encode(array("status"=>"error", "message"=>"Nothing To Do!"));
-				}
+				$filter = array("user_id" => $this->user->id);
 			}
 			else
 			{
-				echo json_encode(array("status"=>"error", "message"=>"Nothing To Do!"));
+				$filter = array("rating_ip" => $_SERVER['REMOTE_ADDR']);
 			}
+
+			$previous = ORM::factory('rating')
+					->where('incident_id',$id)
+					->where($filter)
+					->find();
+
+
+
+			// If previous exits... update previous vote
+			$rating = new Rating_reports_Model($previous->id);
+
+			$rating->incident_id = $id;
+
+			// Is there a user?
+			if ($this->user)
+			{
+				$rating->user_id = $this->user->id;
+
+				if ($rating->incident->user_id == $this->user->id)
+				{
+					echo json_encode(array("status"=>"error", "message"=>"Can't rate your own Reports!"));
+					exit;
+				}
+
+			}
+
+			$rating->rating_id = $action;
+			$rating->rating_ip = $_SERVER['REMOTE_ADDR'];
+			$rating->rating_date = date("Y-m-d H:i:s",time());
+			$rating->save();
+
+
+
+			echo json_encode(array("status"=>"saved", "message"=>"SAVED!"));
+
+
 		}
 	}
 

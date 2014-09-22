@@ -36,17 +36,7 @@
                           <?php Event::run('ushahidi_action.report_meta_after_time', $incident_id); ?>
                         </div>
                         <div class="col-md-offset-1 col-md-3 col-xs-12">
-                         <?php
-					    	  if ($incident_verified)
-					    		{
-					    			//echo '<p class="r_verified">'.Kohana::lang('ui_main.verified').'</p>';
-					    			echo '<span class="verified-big"><img src="'.url::file_loc('images').'themes/ci-theme/images/verified-big.png" alt="Denuncia Verificada"/></span>';
-					    		}
-					    		else
-					    		{
-					    			echo '<p class="r_unverified">'.Kohana::lang('ui_main.unverified').'</p>';
-					    		}
-					  	  ?>                         
+                
                         </div>  
                       </div>                  
                   </div> <!-- /. main-header -->
@@ -143,7 +133,7 @@
 
 								<?php if(strlen($custom_forms) > 0) { ?>
 								<div class="credibility">
-								<h5><?php echo Kohana::lang('ui_main.additional_data');?></h5>
+								<h3><?php echo Kohana::lang('ui_main.additional_data');?></h3>
 								<?php
 
 									echo $custom_forms;
@@ -156,15 +146,10 @@
 								<?php								
 								Event::run('ushahidi_action.report_meta', $incident_id);
 								?>
-								</p>                    
+								</p>       
+								     
 	                          	<br><br>
 								
-								<?php
-									$link =  "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-									$escaped_link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8');
-								?>
-	                          	<div class="fb-comments" data-width="100%" date-href="<?php echo $escaped_link; ?>" data-numposts="5" data-colorscheme="light"></div>
-	                          	<div id="status" style="display:none"></div>                        
 
 	                      	</div>
 
@@ -217,6 +202,18 @@
 
 
                           <!--<button type="button" class="btn btn-lg btn-success upper bold-italic">Seguir Reporte</button> -->
+                        </div>
+                        <div style="width: 360px;">
+                       		<h3 class="section-title">
+								Comentarios
+							</h3>
+                        								<?php
+									$link =  "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+									$escaped_link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8');
+								?>
+	                          	<div class="fb-comments" data-width="360" data-href="<?php echo $escaped_link; ?>" data-numposts="5" data-colorscheme="light"></div>
+	                          	<div id="status" style="display:none"></div>                        
+
                         </div>
                         <!--
 						<div id="denuncias-cercanas">

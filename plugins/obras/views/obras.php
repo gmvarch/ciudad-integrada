@@ -31,7 +31,7 @@
               <div class="row">
                 <div class="col-md-12 col-xs-12">
               <div class="f-category-box">
-                <ul class="filter-list fl-categories" id="category-filter-list">
+                <ul class="filter-list fl-categories obras_cat" id="category-filter-list">
                   <li>
                     <a href="#"><?php
                     $all_cat_image = '&nbsp';
@@ -44,9 +44,9 @@
                       <?php echo $all_cat_image ?>
                     </span>
                     <span class="item-title"><?php echo Kohana::lang('ui_main.all_categories'); ?></span>
-                    <!--<span class="item-count" id="all_report_count"><?php echo $report_stats->total_reports; ?></span>-->
+                    <!-- <span class="item-count" id="all_report_count"><?php echo $report_stats->total_reports; ?></span> -->
                     </a>
-                  </li>
+                  </li> 
                   <?php echo $category_tree_view; ?>
                 </ul>
               </div>
