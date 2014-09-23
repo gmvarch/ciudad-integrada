@@ -38,6 +38,7 @@
 	
 	if (urlParameters.length == 0)
 	{
+		urlParameters = {};
 		urlParameters["c"] = ["13"];
 	}
 	
