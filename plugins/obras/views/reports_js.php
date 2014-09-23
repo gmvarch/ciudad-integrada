@@ -242,7 +242,7 @@
 			$("input[id^='custom_field_']:text").val("");
 			
 			// Reset the url parameters
-			//urlParameters = {};
+			urlParameters = {};
 			urlParameters["c"] = ["13"];
 		
 			// Fetch all reports
@@ -654,7 +654,7 @@
 			// Get all the selected categories
 			// 
 			var category_ids = [];
-			$.each($(".fl-categories li a.selected"), function(i, item){
+			$.each($(".obras_cat li.report-listing-category-child a.selected"), function(i, item){
 				itemId = item.id.substring("filter_link_cat_".length);
 				// Check if category 0, "All categories" has been selected
 				category_ids.push(itemId);
@@ -663,98 +663,9 @@
 			if (category_ids.length > 0)
 			{
 				urlParameters["c"] = category_ids;
-			}
-			
-			// 
-			// Get the incident modes
-			// 
-			var incidentModes = [];
-			$.each($(".fl-incident-mode li a.selected"), function(i, item){
-				modeId = item.id.substring("filter_link_mode_".length);
-				incidentModes.push(modeId);
-			});
-			
-			if (incidentModes.length > 0)
-			{
-				urlParameters["mode"] = incidentModes;
-			}
+			}			
+						
 
-			
-			// Get the verification status
-			var verificationStatus = [];
-			$.each($(".fl-verification li a.selected"), function(i, item){
-				statusVal = item.id.substring("filter_link_verification_".length);
-				verificationStatus.push(statusVal);
-			});
-			if (verificationStatus.length > 0)
-			{
-				urlParameters["v"] = verificationStatus;
-			}
-			
-			//
-			// Get the Custom Form Fields
-			// 
-			var customFields = new Array();
-			var checkBoxId = null;
-			var checkBoxArray = new Array();
-			$.each($("input[id^='custom_field_']"), function(i, item) {
-				var cffId = item.id.substring("custom_field_".length);
-				var value = $(item).val();
-				var type = $(item).attr("type");
-				if(type == "text")
-				{
-					if(value != "" && value != undefined && value != null)
-					{
-						customFields.push([cffId, value]);
-					}
-				}
-				else if(type == "radio")
-				{
-					if($(item).attr("checked"))
-					{
-						customFields.push([cffId, value]);
-					}
-				}
-				else if(type == "checkbox")
-				{
-					if($(item).attr("checked"))
-					{
-						checkBoxId = cffId;
-						checkBoxArray.push(value);
-					}
-				}
-				
-				if(type != "checkbox" && checkBoxId != null)
-				{
-					customFields.push([checkBoxId, checkBoxArray]);
-					checkBoxId = null;
-					checkBoxArray = new Array();
-				}
-				
-			});
-			//incase the last field was a checkbox
-			if(checkBoxId != null)
-			{
-				customFields.push([checkBoxId, checkBoxArray]);				
-			}
-			
-			//now selects
-			$.each($("select[id^='custom_field_']"), function(i, item) {
-				var cffId = item.id.substring("custom_field_".length);
-				var value = $(item).val();
-				if(value != "---NOT_SELECTED---")
-				{
-					customFields.push([cffId, value]);
-				}
-			});
-			if(customFields.length > 0)
-			{
-				urlParameters["cff"] = customFields;
-			}
-			else
-			{
-				delete urlParameters["cff"];
-			}
 			
 			<?php
 				// Action, allows plugins to add custom filters

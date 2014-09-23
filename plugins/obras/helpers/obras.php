@@ -68,7 +68,7 @@ class obras_Core {
 		}
 		
 		
-		/*
+		
 		//> BEGIN PARAMETER FETCH
 		// 
 		// Check for the category parameter
@@ -256,7 +256,7 @@ class obras_Core {
 				);
 			}
 		}
-		*/
+		
 		
 		//
 		// Check if they're filtering over custom form fields
