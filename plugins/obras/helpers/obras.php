@@ -324,16 +324,18 @@ class obras_Core {
 		Event::run('ushahidi_filter.fetch_incidents_set_params', self::$params);
 		
 		//> END PARAMETER FETCH
-		array_push(self::$params,
-					'(c.id IN (13) OR c.parent_id IN (13))',
-					'c.category_visible = 1'
+		/*array_push(self::$params,
+					'(c.id IN (13) OR c.parent_id IN (13))'			
+					
 				);
+		*/
 		/*
-		 * array_push(self::$params,
+		 array_push(self::$params,
 					'(c.id IN (2) OR c.parent_id IN (2))',
 					'c.category_visible = 0'
 				);
-		 * */
+				*/
+		
 		// Check for order and sort params
 		$order_field = NULL; $sort = NULL;
 		$order_options = array(

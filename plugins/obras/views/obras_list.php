@@ -43,10 +43,30 @@
 			<div id="rb_list-view" class="col-md-12 col-xs-12 lista-reportes" style="padding:0 15px ;">
 			<div class="wg-list-article">
 				<ul>
-				<?php
+				<?php			
+					if(isset($_GET["c"])) { $categorias_b = $_GET["c"]; }
+					$bandera = false;		
 					foreach ($incidents as $incident)
 					{
-						$incident_id = $incident->incident_id;
+						$incident_id = $incident->incident_id;						
+						$categories = ORM::Factory('category')->join('incident_category', 'category_id', 'category.id')->where('incident_id', $incident_id)->find_all();
+						if(isset($categorias_b)) {
+							// [0] => 23 [1] => 24 [2] => 25 [3] => 26 [4] => 27 [5] => 28 [6] => 29 [7] => 30 [8] => 31 
+							foreach ($categorias_b as $barrio) {
+								if (($barrio == 23) OR ($barrio == 24) OR ($barrio == 25) OR ($barrio == 26) OR ($barrio == 27) OR ($barrio == 28) OR ($barrio == 29) OR ($barrio == 30)OR ($barrio == 31)  ) {
+
+									
+								}
+								
+							}
+						}
+						foreach ($categories as $category): 
+										if ($category->parent_id == 13){ $bandera = true; }
+									endforeach;
+						if ($bandera == false) {
+							continue;
+						}
+						
 						$incident_title = $incident->incident_title;
 						$incident_description = $incident->incident_description;
 						$incident_url = url::site() . 'obras/view/' . $incident_id; 
