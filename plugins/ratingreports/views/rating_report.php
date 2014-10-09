@@ -6,7 +6,7 @@ $opt_frenada = (isset($monitoreos["Está frenada"])) ? $monitoreos["Está frenad
 $opt_terminada = (isset($monitoreos["Está terminada"])) ? $monitoreos["Está terminada"] : 0 ;
 echo "<hr style='margin-top: 10px;padding: 3px;border-top: 1px dotted #C0C2B8;'>";
 echo "<h3>Monitoreá la obra</h3>";
-if($logged_in != 1) { echo "<a href='<?php echo url::site();?>login' type='button' class='btn btn-md btn-danger upper bold-italic'>Ingresa para monitorear la obra</a>"; }
+if($logged_in != 1) { echo "<a href='".url::site()."login' type='button' class='btn btn-md btn-danger upper bold-italic'>Ingresa para monitorear la obra</a>"; }
 if($logged_in != 1 ||  $user_vote != 0){
 ?>
 <div class="box-graph">
