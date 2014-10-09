@@ -810,7 +810,8 @@ class Login_Controller extends Template_Controller {
 							$auth->login($username, $password, TRUE);
 
 							// Redirect to Dashboard
-							url::redirect($auth->get_user()->dashboard());
+							//url::redirect($auth->get_user()->dashboard());
+							url::redirect();
 						}
 					}
 				}
