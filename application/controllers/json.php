@@ -240,9 +240,8 @@ class Json_Controller extends Template_Controller {
 				'timestamp' => strtotime($marker->incident_date),
 				'count' => 1,
 				'class' => get_class($marker),
-				'title'  => $marker->incident_title,
-				'description' => $marker->incident_description
-			); 
+				'title'  => $marker->incident_title
+			);
 			$json_item['geometry'] = array(
 				'type' => 'Point',
 				'coordinates' => array($longitude, $latitude)
@@ -647,28 +646,31 @@ class Json_Controller extends Template_Controller {
 			$layer_url = $layer->layer_url;
 			$layer_file = $layer->layer_file;
 
+			$content === FALSE;
+			
 			if ($layer_url != '')
 			{
 				// Pull from a URL
 				$layer_link = $layer_url;
+        			$layer_request = new HttpClient($layer_link);
+        			$content = $layer_request->execute();
+        			if ($content === FALSE) 
+				{
+					throw new Kohana_Exception($layer_request->get_error_msg());
+				}
 			}
 			else
 			{
 				// Pull from an uploaded file
 				$layer_link = Kohana::config('upload.directory').'/'.$layer_file;
+				$content = readfile($layer_link);
+				if ($content === FALSE) 
+				{
+					throw new Kohana_Exception("Couldn't read KML file: " . $layer_link);
+				}
 			}
 
-			$layer_request = new HttpClient($layer_link);
-			$content = $layer_request->execute();
-
-			if ($content === FALSE) 
-			{
-				throw new Kohana_Exception($layer_request->get_error_msg());
-			}
-			else
-			{
-				echo $content;
-			}
+			echo $content;
 		}
 		else
 		{
