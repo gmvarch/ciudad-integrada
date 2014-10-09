@@ -711,15 +711,20 @@ class Login_Controller extends Template_Controller {
 		$this->template = "";
 		$this->auto_render = FALSE;
 
-		$settings = ORM::factory("settings")->find(1);
-
-		$appid = $settings->facebook_appid;
-		$appsecret = $settings->facebook_appsecret;
+		/*
+ 		$settings = ORM::factory("settings")->find(1);
+ 
+ 		$appid = $settings->facebook_appid;
+ 		$appsecret = $settings->facebook_appsecret;
+		*/
+		$appid = "594472380623282";		
+		$appsecret = "70cc25515abffe73fe5edac28c9b5bed";
 		$next_url = url::site()."members/login/facebook";
 		$cancel_url = url::site()."members/login";
 
 		// Create our Application instance.
 		$facebook = new Facebook(array(
+			'display'=> 'page',
 			'appId'  => $appid,
 			'secret' => $appsecret,
 			'cookie' => true
@@ -822,7 +827,7 @@ class Login_Controller extends Template_Controller {
 				array(
 					'canvas' => 1,
 					'fbconnect' => 0,
-					'scope' => "email,publish_stream",
+					'scope' => "email",
 					'next' => $next_url,
 					'cancel' => $cancel_url
 				)
