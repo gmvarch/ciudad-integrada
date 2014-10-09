@@ -40,7 +40,7 @@
                       $all_cat_image = html::image(array('src'=>$default_map_all_icon));
                     }
                     ?>
-                    <span class="item-swatch" style="">
+                    <span class="item-swatch" style="background-color: #<?php echo Kohana::config('settings.default_map_all'); ?>">
                       <?php echo $all_cat_image ?>
                     </span>
                     <span class="item-title"><?php echo Kohana::lang('ui_main.all_categories'); ?></span>
