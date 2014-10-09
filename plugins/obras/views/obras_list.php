@@ -117,19 +117,19 @@
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-infraestructura2.png";	
 								elseif ($category->id == '6'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-infraestructura2.png";
-								elseif ($category->id == '7'): 
+								elseif ($category->id == '15'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-agua2.png";
-								elseif ($category->id == '8'): 
+								elseif ($category->id == '16'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-cloacas2.png";
-								elseif ($category->id == '9'): 
+								elseif ($category->id == '17'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-luz2.png";
-								elseif ($category->id == '10'): 
+								elseif ($category->id == '18'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-salud2.png";
-								elseif ($category->id == '11'): 
+								elseif ($category->id == '19'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-calles2.png";
-								elseif ($category->id == '12'): 
+								elseif ($category->id == '20'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-basura2.png";
-								elseif ($category->id == '13'): 
+								elseif ($category->id == '21'): 
 									$incident_thumb = url::file_loc('images')."themes/ci-theme/images/iconos/icon-obras2.png";
 								else:
 								endif; 
