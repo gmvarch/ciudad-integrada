@@ -827,7 +827,7 @@ class Login_Controller extends Template_Controller {
 				array(
 					'canvas' => 1,
 					'fbconnect' => 0,
-					'scope' => "email",
+					'scope' => "basic_info,email",
 					'next' => $next_url,
 					'cancel' => $cancel_url
 				)
