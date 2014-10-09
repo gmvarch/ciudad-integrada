@@ -47,7 +47,8 @@ class Login_Controller extends Template_Controller {
 			// Redirect users to the relevant dashboard
 			if ($auth->logged_in('login'))
 			{
-				url::redirect($auth->get_user()->dashboard());
+				/*url::redirect($auth->get_user()->dashboard());*/ 
+				url::redirect('/');
 			}
 
 			$insufficient_role = TRUE;
@@ -177,7 +178,8 @@ class Login_Controller extends Template_Controller {
 						Event::run('ushahidi_action.user_login',$user);
 
 						// Exists Redirect to Dashboard
-						url::redirect($user->dashboard());
+						//url::redirect($user->dashboard());
+						url::redirect('/');
 					}
 					else
 					{
@@ -525,7 +527,8 @@ class Login_Controller extends Template_Controller {
 							$auth->force_login($openid_user->user->username);
 
 							// Exists Redirect to Dashboard
-							url::redirect($user->dashboard());
+							//url::redirect($user->dashboard());
+							url::redirect('/');
 						}
 						else
 						{
@@ -582,7 +585,8 @@ class Login_Controller extends Template_Controller {
 									$auth->login($username, $password, TRUE);
 
 									// Redirect to Dashboard
-									url::redirect($user->dashboard());
+									//url::redirect($user->dashboard());
+									url::redirect('/');
 								}
 							}
 						}
@@ -753,7 +757,8 @@ class Login_Controller extends Template_Controller {
 					$auth->force_login($openid_user->user->username);
 
 					// Exists Redirect to Dashboard
-					url::redirect($auth->get_user()->dashboard());
+					//url::redirect($auth->get_user()->dashboard());
+					url::redirect('/');
 				}
 				else
 				{
