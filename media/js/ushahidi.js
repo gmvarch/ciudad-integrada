@@ -227,8 +227,8 @@
 						}
 					},
 					icon: function(feature) {
-						feature_icon = feature.attributes.icon;
-						
+						//feature_icon = feature.attributes.icon;
+						feature_icon = "https://www.caminosdelavilla.org/media/img/openlayers/marker.png";
 						return (feature_icon !== "") ? feature_icon : "";
 					},
 					clusterCount: function(feature) {
