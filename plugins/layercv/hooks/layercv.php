@@ -78,7 +78,7 @@ class layercv {
 		$layer->data = array(
 			'baselayer' => TRUE,
 			'attribution' => '',
-			'url' => 'http://caminosdelavilla.org/tiles/${z}/${x}/${y}.png',	
+			'url' => 'https://www.caminosdelavilla.org/tiles/${z}/${x}/${y}.png',	
 			'type' => ''
 		);
 		$this->layers[$layer->name] = $layer;
