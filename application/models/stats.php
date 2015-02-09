@@ -530,10 +530,10 @@ STATSCOLLECTOR;
 		$request = new HttpClient($url);
 		$buffer = $request->execute();
 
-		if ($buffer === FALSE) 
+		/*if ($buffer === FALSE) 
 		{
 			throw new Kohana_Exception($request->get_error_msg());
-		}
+		}*/
 
 		return $buffer;
 	}
