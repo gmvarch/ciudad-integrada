@@ -25,7 +25,7 @@ before_install:
   - ls
   
 install:
-  - vm tests/phpunit/phpunit.xml.template tests/phpunit/phpunit.xml
+  - mv tests/phpunit/phpunit.xml.template tests/phpunit/phpunit.xml
   - phpunit tests/phpunit/phpunit.xml
   #- selenium tests
 
