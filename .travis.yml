@@ -9,17 +9,19 @@ branches:
   - gmv
 
 before_install:
-  - pecl install pcre
+  - ls  ~/.phpenv/versions/
+  - echo $(phpenv version-name)
+  #- pecl install pcre
   #- cd <pcre_installation_directory>
   #- ./configure --enable-utf8 --enable-unicode-properties
-  - pecl install iconv
+  #- pecl install iconv
   - pecl install mcrypt
   - pecl install spl
-  - pecl install mbstring
-  - pecl install curl
+  #- pecl install mbstring
+  #- pecl install curl
   - pecl install mysql
-  - pecl install imap
-  - pecl install gd
+  #- pecl install imap
+  #- pecl install gd
   
 install:
   - phpunit test/phpunit/phpunit.xml.template
