@@ -9,12 +9,11 @@ branches:
   - gmv
 
 before_install:
-  - ls  ~/.phpenv/versions/
-  - echo $(phpenv version-name)
   #- pecl install pcre
   #- cd <pcre_installation_directory>
   #- ./configure --enable-utf8 --enable-unicode-properties
   #- pecl install iconv
+  - echo "extension = iconv.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - pecl install mcrypt
   - pecl install spl
   #- pecl install mbstring
