@@ -1,0 +1,26 @@
+dist: trusty
+
+languaje: php
+php:
+  - '5.3'
+
+branches:
+  only:
+  - gmv
+
+before_install:
+  - pecl install pcre
+  #- cd <pcre_installation_directory>
+  #- ./configure --enable-utf8 --enable-unicode-properties
+  - pecl install iconv
+  - pecl install mcrypt
+  - pecl install spl
+  - pecl install mbstring
+  - pecl install curl
+  - pecl install mysql
+  - pecl install imap
+  - pecl install gd
+  
+install:
+  - phpunit test/phpunit/phpunit.xml.template
+  #- selenium tests
