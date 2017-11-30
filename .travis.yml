@@ -21,7 +21,12 @@ before_install:
   #- pecl install mysql
   #- pecl install imap
   #- pecl install gd
+  - pwd
+  - ls
   
 install:
   - phpunit test/phpunit/phpunit.xml.template
   #- selenium tests
+
+notifications:
+  email: false
