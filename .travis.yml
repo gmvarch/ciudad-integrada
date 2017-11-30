@@ -25,7 +25,8 @@ before_install:
   - ls
   
 install:
-  - phpunit tests/phpunit/phpunit.xml.template
+  - vm tests/phpunit/phpunit.xml.template tests/phpunit/phpunit.xml
+  - phpunit tests/phpunit/phpunit.xml
   #- selenium tests
 
 notifications:
