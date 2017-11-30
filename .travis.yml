@@ -14,11 +14,11 @@ before_install:
   #- ./configure --enable-utf8 --enable-unicode-properties
   #- pecl install iconv
   - echo "extension = iconv.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-  - pecl install -f mcrypt-1.0.1
-  - pecl install spl
+  #- pecl install -f mcrypt-1.0.1
+  #- pecl install spl
   #- pecl install mbstring
   #- pecl install curl
-  - pecl install mysql
+  #- pecl install mysql
   #- pecl install imap
   #- pecl install gd
   
